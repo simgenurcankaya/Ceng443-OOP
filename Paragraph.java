@@ -8,4 +8,9 @@ public class Paragraph implements DocElement{
     public String getText(){
         return parag;
     }
+
+    @Override
+    public <T> T accept(TextVisitor<T> visitor) {
+        return visitor.visit(this);
+    }
 }

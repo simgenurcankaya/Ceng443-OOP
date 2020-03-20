@@ -16,14 +16,20 @@ public class Var implements MathExpression{
         prev_match = me;
     }
     @Override public boolean match(MathExpression me){
-        if (prev_match == null){
+        if (this.prev_match == null){
             setPreviousMatch(me);
             return true;
         }
         else{
-            //TODO implement match function
+            if(this.prev_match.equals(me))
+                return true;
             return false;
         }
+    }
+
+    @Override
+    public <T> T accept(MathVisitor<T> visitor) {
+        return visitor.visit(this);
     }
 
 }

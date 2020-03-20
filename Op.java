@@ -11,7 +11,7 @@ public class Op implements MathExpression{
         p_first = first;
         p_second = second;
     }
-    getOperand(){
+    String getOperand(){
         return p_operand;
     }
     MathExpression getFirst(){
@@ -20,5 +20,22 @@ public class Op implements MathExpression{
     MathExpression getSecond(){
         return p_second;
     }
+
+    @Override
+    public <T> T accept(MathVisitor<T> visitor) {
+        return visitor.visit(this);
+    }
+
+    @Override
+    public boolean match(MathExpression me) {
+        if (this.p_first.equals(me)) 
+            return true;
+        else if(this.p_second.equals(me))
+            return true;
+        else 
+            return false;
+
+    }
+    
 
 }

@@ -8,4 +8,9 @@ public class EquationText implements DocElement{
     public MathExpression getInnerMath(){
         return p_math;
     }
+
+    @Override
+    public <T> T accept(TextVisitor<T> visitor) {
+        return visitor.visit(this);
+    }
 }

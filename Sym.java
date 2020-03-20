@@ -8,4 +8,16 @@ public class Sym implements MathExpression{
     public String getValue(){
         return val;
     }
+
+    @Override
+    public <T> T accept(MathVisitor<T> visitor) {
+        return visitor.visit(this);
+    }
+
+    @Override
+    public boolean match(MathExpression me) {
+        if(this.equals(me))
+            return true;
+        return false;
+    }
 }

@@ -1,6 +1,10 @@
 interface Rule{
-    void clear();
+    
+    default void clear(){
+        
+    }
     boolean apply(MathExpression me);
     MathExpression getPremise();
     MathExpression getEntails();
-    MathExpression entails(MathExpression me);}
+    MathExpression entails(MathExpression me);
+}

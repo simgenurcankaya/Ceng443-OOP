@@ -1,14 +1,10 @@
 public class XDotYDivXIsYRule implements Rule{
 
     @Override
-    public void clear() {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
     public boolean apply(MathExpression me) {
-        // TODO Auto-generated method stub
+        clear();
+        if(me.match(this))
+            
         return false;
     }
 

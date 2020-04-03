@@ -1,13 +1,13 @@
+package hw1;
 
-
-public class Num implements MathExpression{
-    private int num;
+public class Sym implements MathExpression{
+    private String val;
     
-    public Num(int value){
-        num = value;
+    public Sym(String value){
+        val = value;
     }
-    public int getValue(){
-        return num;
+    public String getValue(){
+        return val;
     }
 
     @Override

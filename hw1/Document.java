@@ -1,5 +1,6 @@
+package hw1;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class Document implements DocElement{
     private String p_title;
@@ -9,6 +10,7 @@ public class Document implements DocElement{
         p_title = title;
         p_list = null;
     }
+    
     public ArrayList<DocElement> getElements(){
         return p_list;
     }

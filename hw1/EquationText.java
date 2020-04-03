@@ -1,3 +1,4 @@
+package hw1;
 
 public class EquationText implements DocElement{
     private MathExpression p_math;

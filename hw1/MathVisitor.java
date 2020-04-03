@@ -1,3 +1,4 @@
+package hw1;
 
 interface MathVisitor<T>{
     T visit(Op op);

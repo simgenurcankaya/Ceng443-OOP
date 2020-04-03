@@ -1,3 +1,5 @@
+package hw1;
+
 public class XDotZeroIsZeroRule implements Rule{
 
     @Override

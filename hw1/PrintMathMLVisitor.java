@@ -1,25 +1,28 @@
-public class CountAtomicsVisitor implements MathVisitor<Integer>{
+package hw1;
+
+
+public class PrintMathMLVisitor implements MathVisitor<String>{
 
     @Override
-    public Integer visit(Op op) {
+    public String visit(Op op) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Integer visit(Num num) {
+    public String visit(Num num) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Integer visit(Sym sym) {
+    public String visit(Sym sym) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Integer visit(Var var) {
+    public String visit(Var var) {
         // TODO Auto-generated method stub
         return null;
     }

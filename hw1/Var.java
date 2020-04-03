@@ -1,3 +1,4 @@
+package hw1;
 
 public class Var implements MathExpression{
     private int p_id;

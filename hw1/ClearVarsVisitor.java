@@ -1,27 +1,28 @@
-public class PrintMathMLVisitor implements MathVisitor<String>{
+package hw1;
+public class ClearVarsVisitor implements MathVisitor<Void>{
 
     @Override
-    public String visit(Op op) {
+    public Void visit(final Op op) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public String visit(Num num) {
+    public Void visit(final Num num) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public String visit(Sym sym) {
+    public Void visit(final Sym sym) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public String visit(Var var) {
+    public Void visit(final Var var) {
         // TODO Auto-generated method stub
         return null;
     }
-    
+
 }

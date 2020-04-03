@@ -1,3 +1,4 @@
+package hw1;
 
 interface MathExpression{
     <T> T accept(MathVisitor<T> visitor);

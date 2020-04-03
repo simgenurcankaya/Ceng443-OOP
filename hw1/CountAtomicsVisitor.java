@@ -1,27 +1,29 @@
-public class ClearVarsVisitor implements MathVisitor<Void>{
+package hw1;
+
+public class CountAtomicsVisitor implements MathVisitor<Integer>{
 
     @Override
-    public Void visit(Op op) {
+    public Integer visit(Op op) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Void visit(Num num) {
+    public Integer visit(Num num) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Void visit(Sym sym) {
+    public Integer visit(Sym sym) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Void visit(Var var) {
+    public Integer visit(Var var) {
         // TODO Auto-generated method stub
         return null;
     }
-
+    
 }

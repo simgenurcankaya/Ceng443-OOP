@@ -1,3 +1,5 @@
+package hw1;
+
 interface Rule{
     
     default void clear(){

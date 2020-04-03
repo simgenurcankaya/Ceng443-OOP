@@ -1,14 +1,10 @@
-public class XPlusXIs2XRule implements Rule{
+package hw1;
 
-    @Override
-    public void clear() {
-        // TODO Auto-generated method stub
-
-    }
+public class XDotYDivXIsYRule implements Rule{
 
     @Override
     public boolean apply(MathExpression me) {
-        // TODO Auto-generated method stub
+        clear();
         return false;
     }
 
@@ -29,5 +25,5 @@ public class XPlusXIs2XRule implements Rule{
         // TODO Auto-generated method stub
         return null;
     }
-
+    
 }

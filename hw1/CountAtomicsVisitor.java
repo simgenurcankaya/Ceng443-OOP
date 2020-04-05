@@ -1,29 +1,21 @@
-package hw1;
-
-public class CountAtomicsVisitor implements MathVisitor<Integer>{
-
+public class CountAtomicsVisitor implements MathVisitor<Integer> {
     @Override
     public Integer visit(Op op) {
-        // TODO Auto-generated method stub
-        return null;
+        return op.getFirst().accept(new CountAtomicsVisitor()) + op.getFirst().accept(new CountAtomicsVisitor()) +  1 ;
     }
 
     @Override
     public Integer visit(Num num) {
-        // TODO Auto-generated method stub
-        return null;
+        return 1;
     }
 
     @Override
     public Integer visit(Sym sym) {
-        // TODO Auto-generated method stub
-        return null;
+        return 1;
     }
 
     @Override
     public Integer visit(Var var) {
-        // TODO Auto-generated method stub
-        return null;
+        return 1;
     }
-    
 }

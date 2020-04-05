@@ -1,6 +1,4 @@
-package hw1;
-
-interface MathVisitor<T>{
+public interface MathVisitor<T>{
     T visit(Op op);
     T visit(Num num);
     T visit(Sym sym);

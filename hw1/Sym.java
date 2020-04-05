@@ -1,13 +1,11 @@
-package hw1;
-
 public class Sym implements MathExpression{
     private String val;
-    
+
     public Sym(String value){
-        val = value;
+        this.val = value;
     }
     public String getValue(){
-        return val;
+        return this.val;
     }
 
     @Override
@@ -17,8 +15,13 @@ public class Sym implements MathExpression{
 
     @Override
     public boolean match(MathExpression me) {
-        if(this.equals(me))
+        if(me == this){
             return true;
+        }
+        if(me instanceof Sym){
+            Sym that = (Sym) me;
+            return (that.val == null && val ==null )  || (val.equals(that.val));
+        }
         return false;
     }
 }

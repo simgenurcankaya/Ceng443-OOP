@@ -1,5 +1,3 @@
-package hw1;
-
-interface DocElement{
+public interface DocElement {
     <T> T accept(TextVisitor<T> visitor);
 }

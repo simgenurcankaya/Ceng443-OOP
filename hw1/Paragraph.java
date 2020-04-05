@@ -1,17 +1,16 @@
-package hw1;
-
 public class Paragraph implements DocElement{
-    private String parag;
-    
+    private String par;
+
     public Paragraph(String text){
-        parag = text;
+        this.par = text;
     }
     public String getText(){
-        return parag;
+        return this.par;
     }
 
     @Override
     public <T> T accept(TextVisitor<T> visitor) {
+
         return visitor.visit(this);
     }
 }

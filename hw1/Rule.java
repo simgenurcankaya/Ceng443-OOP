@@ -1,10 +1,8 @@
-package hw1;
+public interface Rule {
+    default void clear() {
 
-interface Rule{
-    
-    default void clear(){
-        
     }
+
     boolean apply(MathExpression me);
     MathExpression getPremise();
     MathExpression getEntails();

@@ -1,13 +1,12 @@
-package hw1;
+public class Num implements MathExpression {
 
-public class Num implements MathExpression{
     private int num;
-    
+
     public Num(int value){
-        num = value;
+        this.num = value;
     }
     public int getValue(){
-        return num;
+        return this.num;
     }
 
     @Override
@@ -17,8 +16,13 @@ public class Num implements MathExpression{
 
     @Override
     public boolean match(MathExpression me) {
-        if(this.equals(me))
-            return true;
+        if(this == me){
+        return true;
+    }
+        if(me instanceof Num){
+            Num that = (Num) me;
+            return (num == that.num);
+        }
         return false;
     }
 }

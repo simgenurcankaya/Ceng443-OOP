@@ -18,7 +18,9 @@ public class XPlusXIs2XRule implements Rule {
 
     @Override
     public boolean apply(MathExpression me) {
-        x.setPreviousMatch(me);
+        //x.setPreviousMatch(me);
+        Op dum = (Op) me;
+        x.setPreviousMatch(dum.getFirst());
         return true;
     }
 

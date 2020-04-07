@@ -4,7 +4,7 @@ public class XDotYDivXIsYRule implements Rule {
     public XDotYDivXIsYRule(Var x, Var y){
         this.first = x;
         this.second = y;
-        this.premise = new Op("*",first,second);
+        this.premise =  new Op("/",new Op("*",first,second),first);//new Op("*",first,second);
         this.entail = second;
     }
     public Var getX(){
@@ -23,7 +23,11 @@ public class XDotYDivXIsYRule implements Rule {
 
     @Override
     public boolean apply(MathExpression me) {
-        return false;
+        Op dum = (Op) me;
+        Op dum2 = (Op) ((Op) me).getFirst();
+        first.setPreviousMatch(dum.getSecond());
+        second.setPreviousMatch(dum2.getSecond());
+        return true;
     }
 
     @Override

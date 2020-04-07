@@ -19,7 +19,9 @@ public class XDotZeroIsZeroRule implements Rule {
 
     @Override
     public boolean apply(MathExpression me) {
-        return false;
+        Op dum = (Op) me;
+        x.setPreviousMatch(dum.getFirst());
+        return true;
     }
 
     @Override

@@ -16,11 +16,19 @@ public class Var implements MathExpression{
         this.prev_match = me;
     }
     @Override public boolean match(MathExpression me){
-        if (this.prev_match == null){
+        if(this == me){
             return true;
         }
-        else return  this.prev_match.match(me);
+        if(me instanceof  Var){
+            Var that = (Var) me;
+            return (prev_match == null) || prev_match.equals(that.prev_match);
+        }
 
+/*        if (this.prev_match == null){
+            return true;
+        }
+        else return  this.prev_match.match(me);*/
+        return false;
     }
 
     @Override

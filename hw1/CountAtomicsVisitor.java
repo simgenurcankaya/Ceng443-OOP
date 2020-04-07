@@ -1,7 +1,7 @@
 public class CountAtomicsVisitor implements MathVisitor<Integer> {
     @Override
     public Integer visit(Op op) {
-        return op.getFirst().accept(new CountAtomicsVisitor()) + op.getFirst().accept(new CountAtomicsVisitor()) +  1 ;
+        return op.getFirst().accept(new CountAtomicsVisitor()) + op.getSecond().accept(new CountAtomicsVisitor())  ;
     }
 
     @Override

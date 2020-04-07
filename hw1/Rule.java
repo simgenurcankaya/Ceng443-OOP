@@ -1,10 +1,13 @@
 public interface Rule {
-    default void clear() {
-
-    }
+    void clear();
 
     boolean apply(MathExpression me);
+
     MathExpression getPremise();
     MathExpression getEntails();
-    MathExpression entails(MathExpression me);
+
+    default MathExpression entails(MathExpression me) {
+        apply(me);
+        return getEntails();
+    }
 }

@@ -2,18 +2,18 @@ import java.util.ArrayList;
 
 public class Document implements DocElement{
     private String title;
-    private ArrayList<DocElement> list  = new ArrayList<>();
+    private ArrayList<DocElement> list;// = new ArrayList<DocElement>();
 
     public Document(String title){
         this.title = title;
-        this.list = null;
+        this.list = new ArrayList<DocElement>();
     }
 
     public ArrayList<DocElement> getElements(){
         return this.list;
     }
     public void setElements(ArrayList<DocElement> arr){
-        this.list = (ArrayList<DocElement>) arr.clone();
+        this.list = arr;//(ArrayList<DocElement>) arr.clone();
     }
     public void add(DocElement de){
         this.list.add(de);

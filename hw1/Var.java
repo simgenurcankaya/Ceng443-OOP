@@ -4,6 +4,7 @@ public class Var implements MathExpression{
 
     public Var(int id){
         this.p_id = id;
+        this.prev_match = null;
     }
     public int getId(){
         return this.p_id;

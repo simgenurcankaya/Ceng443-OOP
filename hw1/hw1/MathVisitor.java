@@ -1,3 +1,5 @@
+package hw1;
+
 public interface MathVisitor<T>{
     T visit(Op op);
     T visit(Num num);

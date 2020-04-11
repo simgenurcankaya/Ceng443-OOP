@@ -1,3 +1,5 @@
+package hw1;
+
 import java.util.ArrayList;
 
 public class Document implements DocElement{

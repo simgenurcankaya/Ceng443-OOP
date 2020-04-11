@@ -1,3 +1,5 @@
+package hw1;
+
 public class CountAtomicsVisitor implements MathVisitor<Integer> {
     @Override
     public Integer visit(Op op) {

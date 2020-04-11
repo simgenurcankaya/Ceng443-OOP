@@ -1,3 +1,5 @@
+package hw1;
+
 public class Num implements MathExpression {
 
     private int num;

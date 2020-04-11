@@ -1,3 +1,5 @@
+package hw1;
+
 public class XPlusXIs2XRule implements Rule {
     private Var x;
     private  MathExpression premise,entail;
@@ -9,19 +11,17 @@ public class XPlusXIs2XRule implements Rule {
 
     }
 
-    @Override
-    public void clear() {
-        this.premise = null;
-        this.entail = null;
-        this.x = null;
-    }
 
     @Override
     public boolean apply(MathExpression me) {
         //x.setPreviousMatch(me);
+        this.clear();
         Op dum = (Op) me;
-        x.setPreviousMatch(dum.getFirst());
-        return true;
+        if(dum.getFirst().match(dum.getSecond())) {
+            x.setPreviousMatch(dum.getFirst());
+            return true;
+        }
+        else return false;
     }
 
     @Override

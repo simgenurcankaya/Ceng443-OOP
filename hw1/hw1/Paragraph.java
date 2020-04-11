@@ -1,3 +1,5 @@
+package hw1;
+
 public class Paragraph implements DocElement{
     private String par;
 

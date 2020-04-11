@@ -1,3 +1,5 @@
+package hw1;
+
 public class Op implements  MathExpression {
 
     private String p_operand;
@@ -17,7 +19,7 @@ public class Op implements  MathExpression {
         }
         if(me instanceof Op){
             Op that = (Op) me;
-            return (p_operand == null && that.p_operand ==null)  || p_operand.equals(that.p_operand);
+            return (p_operand == null && that.p_operand ==null)  || (p_operand.equals(that.p_operand) && p_second.match(that.p_second) && p_first.match(that.p_first));
         }
         return false;
     }

@@ -1,5 +1,10 @@
+package hw1;
+
 public interface Rule {
-    void clear();
+    default void clear() {
+        this.getPremise().accept(new ClearVarsVisitor());
+        this.getEntails().accept(new ClearVarsVisitor());
+    }
 
     boolean apply(MathExpression me);
 

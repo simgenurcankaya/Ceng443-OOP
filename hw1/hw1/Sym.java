@@ -1,3 +1,5 @@
+package hw1;
+
 public class Sym implements MathExpression{
     private String val;
 

@@ -1,20 +1,22 @@
+package hw1;
+
 public class PrintMathMLVisitor implements MathVisitor<String> {
     @Override
     public String visit(Op op) {
         String ret;
         if(op.getOperand().equals("/")){
             //division
-            ret = "<mrow><mfrac> ";
+            ret = "<mrow><mfrac>";
             ret = ret.concat(op.getFirst().accept(new PrintMathMLVisitor()));
-            ret = ret.concat(" ");
+            //ret = ret.concat(" ");
             ret = ret.concat(op.getSecond().accept(new PrintMathMLVisitor()));
-            ret = ret.concat(" </mfrac></mrow>");
+            ret = ret.concat("</mfrac></mrow>");
             return  ret;
         }
         else{
-            ret = "<mrow><mo>(</mo> ";
+            ret = "<mrow><mo>(</mo>";
             ret = ret.concat(op.getFirst().accept(new PrintMathMLVisitor()));
-            ret = ret.concat(" <mo> ");
+            ret = ret.concat("<mo>");
 
             if(op.getOperand().equals("*")){
                 ret= ret.concat("&times;");
@@ -25,26 +27,26 @@ public class PrintMathMLVisitor implements MathVisitor<String> {
             else if(op.getOperand().equals("|-")){
                 ret = ret.concat("&vdash;");
             }
-            ret = ret.concat(" </mo> ");
+            ret = ret.concat("</mo>");
             ret = ret.concat(op.getSecond().accept(new PrintMathMLVisitor()));
-            ret = ret.concat(" <mo>)</mo></mrow>");
+            ret = ret.concat("<mo>)</mo></mrow>");
             return ret;
         }
     }
 
     @Override
     public String visit(Num num) {
-        String ret = "<mrow><mn> ";
+        String ret = "<mrow><mn>";
         ret = ret.concat(Integer.toString(num.getValue()));
-        ret  = ret.concat(" </mn></mrow>");
+        ret  = ret.concat("</mn></mrow>");
         return ret;
     }
 
     @Override
     public String visit(Sym sym) {
-        String ret = "<mrow><mi> ";
+        String ret = "<mrow><mi>";
         ret = ret.concat(sym.getValue());
-        ret  = ret.concat(" </mi></mrow>");
+        ret  = ret.concat("</mi></mrow>");
         return ret;
     }
 
@@ -58,7 +60,7 @@ public class PrintMathMLVisitor implements MathVisitor<String> {
             return ret;
         }
         else{
-            ret = ret.concat("<mo>[</mo> ");
+            ret = ret.concat("<mo>[</mo>");
             ret = ret.concat(var.getPreviousMatch().accept(new PrintMathMLVisitor()));
             ret = ret.concat("<mo>]</mo></mrow>");
             return  ret;

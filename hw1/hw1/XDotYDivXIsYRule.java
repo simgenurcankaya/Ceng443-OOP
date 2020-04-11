@@ -1,3 +1,5 @@
+package hw1;
+
 public class XDotYDivXIsYRule implements Rule {
     MathExpression premise,entail;
     Var first, second;

@@ -1,3 +1,5 @@
+package hw1;
+
 public class Var implements MathExpression{
     private int p_id;
     private MathExpression prev_match = null;
@@ -22,6 +24,12 @@ public class Var implements MathExpression{
         if(me instanceof  Var){
             Var that = (Var) me;
             return (prev_match == null) || prev_match.equals(that.prev_match);
+        }
+        if(me instanceof Op){
+            Op that = (Op) me;
+            if(prev_match != null) return prev_match.equals(that) ||prev_match.match(that);
+            prev_match = me;
+            return true;
         }
 
 /*        if (this.prev_match == null){

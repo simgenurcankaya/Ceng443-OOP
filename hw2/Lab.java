@@ -1,22 +1,24 @@
-
+package hw2;
 import java.util.concurrent.Semaphore;
 
 
 public class Lab {
+    
     private String name;
     private int capacity;
-    int currentStudentNumber;
-    String currentGroup;
-    Semaphore capacityHunter;
-    Semaphore groupHunter;
+
+    int currentStudentNumber; //variable to hold the number of students inside lab
+    String currentGroup; // variable to hold the current group inside the lab
+    Semaphore capacityHunter; // Semaphore for the capacity 
+    Semaphore groupHunter; // Semaphore to ensure one group at a time
 
     public Lab(String n, int c) {
         this.name = n;
         this.capacity = c;
         this.currentStudentNumber = 0;
-        this.currentGroup = null;
-        this.capacityHunter = new Semaphore(c);
-        this.groupHunter = new Semaphore(1);
+        this.currentGroup = null; 
+        this.capacityHunter = new Semaphore(c); //initialize with capacity
+        this.groupHunter = new Semaphore(1); //initialize with 1
     }
 
     public String getName() {
